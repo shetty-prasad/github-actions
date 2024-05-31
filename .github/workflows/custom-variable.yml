@@ -10,7 +10,7 @@ env:
 jobs:
   mainjob:
     name: 'Print the env vars'
-    runs-on: ububtu-latest
+    runs-on: ubuntu-latest
 
     env:
       Greeting: Dear
