@@ -6,6 +6,7 @@ on:
 env:
   DAY_OF_WEEK: Funday
   testvar: value-1
+  First_Name: Prasad
 
 jobs:
   mainjob:
@@ -23,9 +24,9 @@ jobs:
         echo " testvar $testvar"
         echo " testvar ${{ env.testvar}}"
 
-      env:
-        First_Name: Student
-        testvar: value-3
+     # env:
+     #   First_Name: Student
+     #   testvar: value-3
 
         
     
