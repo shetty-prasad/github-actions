@@ -1,3 +1,0 @@
-name: 'custom github env var demo'
-
-on: workflow_dispatch
