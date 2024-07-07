@@ -1,0 +1,15 @@
+name: default github env var
+
+on: 
+    workflow_dispatch
+
+jobs:
+    ubuntu-env-variables:
+        runs-on: ubuntu-latest
+        steps:
+            - run: env
+            
+    window-env-variable:
+        runs-on: windows-latest
+        steps:
+            - run: env
