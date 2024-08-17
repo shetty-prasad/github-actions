@@ -1,0 +1,41 @@
+#job to print the date
+name: print date
+
+on: push
+
+jobs: 
+    job1:
+        name: print date in Ubuntu
+        runs-on: ubuntu-latest
+        steps:
+            - name: ubuntu-date
+              run:
+                date              
+
+    job2:
+        name: print date in windows
+        runs-on: windows-latest
+        steps:
+            - name: windows-date
+              run: 
+                date /t
+        
+    job3:
+        name: print date in macos
+        runs-on: macos-latest
+        steps:
+            - name: macos-date
+              run:
+                date
+        
+    job4:
+        needs: [job1,job2,job3]
+        name: job4 depends on 1 to 3
+        runs-on: ubuntu-latest
+        steps:
+          - name: ubuntu-date
+            run:
+              date
+
+
+
