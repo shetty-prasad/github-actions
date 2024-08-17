@@ -16,9 +16,10 @@ jobs:
         name: print date in windows
         runs-on: windows-latest
         steps:
-            - name: windows-date
-              run: 
-                date /t
+          - shell: bash
+          - name: windows-date
+            run: 
+              date /t
         
     job3:
         name: print date in macos
