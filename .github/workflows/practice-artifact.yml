@@ -13,5 +13,5 @@ jobs:
     - name: Upload artifact for linux
       uses: actions/upload-artifact@v2
       with:
-        name: linux-artifact
-        path: ./${{ env.file-name }} 
+        name: ${{ env.file-name }}
+        path: .
