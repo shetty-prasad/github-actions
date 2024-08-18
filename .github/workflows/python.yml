@@ -1,0 +1,26 @@
+name: python
+on: push
+env:
+  file-name: hello.py
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v2
+            - name: Setup Python environment
+              uses: actions/setup-python@v1.1.1
+            - name: execute python file
+              run: python hello.py
+
+    build:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v2
+            - name: Upload python artifact
+              uses: actions/upload-artifact@v2
+              with:
+                name: upload file
+                path: ${{ env.file-name }}
