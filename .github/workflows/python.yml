@@ -1,4 +1,4 @@
-name: python
+name: python-execute
 on: workflow_dispatch
 env:
   file-name: hello.py
