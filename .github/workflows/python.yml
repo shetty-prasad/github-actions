@@ -1,5 +1,5 @@
 name: python
-on: push
+on: workflow_dispatch
 env:
   file-name: hello.py
 jobs:
