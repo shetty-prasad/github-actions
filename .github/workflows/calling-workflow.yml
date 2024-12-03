@@ -1,0 +1,12 @@
+name: calling workflow
+
+on:
+    workflow_dispatch
+
+jobs:
+    my-job:
+        # Importing a reusable workflow from another repository and branch
+        uses: shetty-prasad/actions-demo/.github/workflows/reusable-workflow.yml@main
+        # Passing 'node-version' as an input parameter to the reusable workflow
+        with:
+          node-version: '18.x'   
