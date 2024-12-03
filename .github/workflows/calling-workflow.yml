@@ -9,4 +9,4 @@ jobs:
         uses: shetty-prasad/actions-demo/.github/workflows/reusable-workflow.yml@main
         # Passing 'node-version' as an input parameter to the reusable workflow
         with:
-          node-version: '18.x'   
+          python-version: '3.10'   
