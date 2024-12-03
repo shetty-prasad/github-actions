@@ -17,7 +17,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       # Modified to use the python-version from the workflow inputs
-      - name: use python.js
+      - name: use python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ inputs.python-version }}
@@ -33,7 +33,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       # Modified to use the python-version from the workflow inputs
-      - name: use python.js
+      - name: use python
         uses: actions/setup-python@v3
         with:
           python-version: ${{ inputs.python-version }}
