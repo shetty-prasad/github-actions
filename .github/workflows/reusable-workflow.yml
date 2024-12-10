@@ -24,19 +24,19 @@ jobs:
 
 
 
-  test: 
-    needs: build
+  # test: 
+  #   needs: build
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps: 
-      - name: checkout repo
-        uses: actions/checkout@v3
-      # Modified to use the python-version from the workflow inputs
-      - name: use python
-        uses: actions/setup-python@v3
-        with:
-          python-version: ${{ inputs.python-version }}
+  #   steps: 
+  #     - name: checkout repo
+  #       uses: actions/checkout@v3
+  #     # Modified to use the python-version from the workflow inputs
+  #     - name: use python
+  #       uses: actions/setup-python@v3
+  #       with:
+  #         python-version: ${{ inputs.python-version }}
           
 ##     - name: execute python file
 ##run: python hello.py
