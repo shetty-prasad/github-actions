@@ -135,7 +135,7 @@ External system से trigger (जैसे Jenkins, Terraform Cloud, या cu
 🧱 Example:
 
 Repo B में ये workflow है (.github/workflows/deploy.yml):
-
+```
 name: Deploy via Dispatch
 
 on:
@@ -148,16 +148,16 @@ jobs:
     steps:
       - name: Deploy Application
         run: echo "Deploying version ${{ github.event.client_payload.version }}"
-
+```
 
 अब Repo A से आप GitHub API call करके इसे चला सकते हैं 👇
-
+```
 curl -X POST \
   -H "Authorization: token <YOUR_GITHUB_TOKEN>" \
   -H "Accept: application/vnd.github.v3+json" \
   https://api.github.com/repos/<org>/<repoB>/dispatches \
   -d '{"event_type": "deploy-trigger", "client_payload": {"version": "v1.2.3"}}'
-
+```
 🔹 Key Features:
 
 External trigger possible ✅
@@ -193,7 +193,7 @@ Inputs/Outputs clearly defined होते हैं
 🧱 Example:
 
 Reusable Workflow (.github/workflows/build.yml):
-
+```
 on:
   workflow_call:
     inputs:
@@ -206,10 +206,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Building for environment ${{ inputs.env }}"
-
+```
 
 Caller Workflow:
-
+```
 name: Call reusable workflow
 
 on:
@@ -221,7 +221,7 @@ jobs:
     uses: my-org/my-repo/.github/workflows/build.yml@main
     with:
       env: "production"
-
+```
 🔹 Key Features:
 
 Built-in input/output system ✅
