@@ -239,3 +239,15 @@ Cannot trigger across unrelated repos (unless both public or you use a PAT with 
 Works only when workflow is defined with on: workflow_call
 
 Cannot be triggered externally by an API
+
+* how to increase the performance of github actions ?
+
+Cache dependencies (npm, pip, Maven, Gradle, cargo). Restoring cached deps is often the single biggest win.
+
+Use self-hosted runners (or autoscaled pools): more CPU/RAM, pre-warmed caches, persistent Docker images — huge for heavy builds.
+
+Reuse workflows / composite actions to reduce YAML duplication and repeated setup steps.
+
+Avoid expensive steps every run (lint/build/test only on changed packages, run fast linters early and fail fast).
+
+
